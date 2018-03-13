@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#455a64</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#9e9e9e</color>
+    <color name="colorDelete">#b71c1c</color>
+    <color name="colorCalcZone">#e0e0e0</color>
+    <color name="LayoutIdentifier">#e040fb</color>
+    <color name="SimpleButtons">#d50000</color>
+    <color name="ScientificButtons">#0d47a1</color>
+    <color name="GraphingButtons">#ffc400</color>
+</resources>

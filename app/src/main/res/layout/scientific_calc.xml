@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/colorAccent">
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/title_scientific"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_shift"
+                        style="@android:style/Widget.Holo.Button.Borderless.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="SHIFT"
+                        android:textColor="@color/GraphingButtons" />
+
+                    <Button
+                        android:id="@+id/scientific_button_inverse"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="x^-1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_alpha"
+                        style="@android:style/Widget.Holo.Button.Borderless.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="ALPHA"
+                        android:textColor="@color/SimpleButtons" />
+
+                    <Button
+                        android:id="@+id/scientific_button_ncr"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="nCr"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/scientific_button_dpad"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33333333"
+                    android:text="REPLAY"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_mode"
+                        style="@android:style/Widget.Holo.Button.Borderless.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="MODE"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_pol"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="Pol("/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_clr"
+                        style="@android:style/Widget.Holo.Button.Borderless.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="CLR" />
+
+                    <Button
+                        android:id="@+id/scientific_button_cube"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:text="x^3"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryDark">
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_abc"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="ab/c"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_neg"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="(-)"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_rcl"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="RCL"/>
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_sqrt"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="sqrt"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_dot"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="*"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_eng"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="ENG"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_square"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="x^2"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_hyp"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="hyp"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_Lbracket"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="("/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_power"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="^"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_sin"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="sin"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_Rbracket"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text=")"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_log"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="log"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_cos"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="cos"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_comma"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text=","/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.166666666"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_ln"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="ln"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_tan"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="tan"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_memp"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.333333333"
+                        android:text="M+"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary">
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+                    
+                    <Button
+                        android:id="@+id/scientific_button_7"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" 
+                        android:layout_weight="0.25"
+                        android:text="7"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_4"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="4"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_1"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="1"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_0"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="0"/>
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_8"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="8"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_5"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="5"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_2"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="2"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_decimal"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="."/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/scientific_button_9"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="9"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_6"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="6"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_3"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="3"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_exp"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="EXP"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:background="@color/colorDelete">
+
+                        <Button
+                            android:id="@+id/scientific_button_del"
+                            style="@android:style/Widget.Holo.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="DEL" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/scientific_button_multiply"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="x"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_add"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="+"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_ans"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="ANS"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:weightSum="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:background="@color/colorDelete">
+
+                        <Button
+                            android:id="@+id/scientific_button_ac"
+                            style="@android:style/Widget.Holo.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="AC" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/scientific_button_divide"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="/"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_subtract"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="-"/>
+
+                    <Button
+                        android:id="@+id/scientific_button_equals"
+                        style="@android:style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.25"
+                        android:text="="/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
