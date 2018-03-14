@@ -11,25 +11,41 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.3"
+            android:weightSum="1"
+            android:orientation="vertical"
             android:background="@color/colorAccent">
 
             <TextView
-                android:id="@+id/message"
-                android:layout_width="wrap_content"
+                android:id="@+id/calc_txtEntry"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:text="@string/title_scientific"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_weight="0.5"
+                android:gravity="end|bottom"
+                android:maxLength="20"
+                android:paddingEnd="20dp"
+                android:text="1234+5678"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="60sp"
+                android:typeface="serif" />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/calc_txtResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="end|top"
+                android:maxLength="20"
+                android:paddingEnd="20dp"
+                android:text="6912"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp"
+                android:typeface="serif" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,8 +76,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="SHIFT"
-                        android:textColor="@color/GraphingButtons" />
+                        android:text="@string/button_scientific_shift"
+                        android:textColor="@color/colorTextShift" />
 
                     <Button
                         android:id="@+id/scientific_button_inverse"
@@ -69,7 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="x^-1"/>
+                        android:text="@string/button_scientific_inverse"/>
 
                 </LinearLayout>
 
@@ -86,8 +102,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="ALPHA"
-                        android:textColor="@color/SimpleButtons" />
+                        android:text="@string/button_scientific_alpha"
+                        android:textColor="@color/colorTextAlpha" />
 
                     <Button
                         android:id="@+id/scientific_button_ncr"
@@ -95,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="nCr"/>
+                        android:text="@string/button_scientific_ncr"/>
 
                 </LinearLayout>
 
@@ -120,7 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="MODE"/>
+                        android:text="@string/button_scientific_mode"/>
 
                     <Button
                         android:id="@+id/scientific_button_pol"
@@ -128,7 +144,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="Pol("/>
+                        android:text="@string/button_scientific_pol"/>
 
                 </LinearLayout>
 
@@ -145,7 +161,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="CLR" />
+                        android:text="@string/button_scientific_clr" />
 
                     <Button
                         android:id="@+id/scientific_button_cube"
@@ -153,7 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:text="x^3"/>
+                        android:text="@string/button_scientific_cube"/>
 
                 </LinearLayout>
 
@@ -180,7 +196,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="ab/c"/>
+                        android:text="@string/button_scientific_abc"/>
 
                     <Button
                         android:id="@+id/scientific_button_neg"
@@ -188,7 +204,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="(-)"/>
+                        android:text="@string/button_scientific_neg"/>
 
                     <Button
                         android:id="@+id/scientific_button_rcl"
@@ -196,7 +212,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="RCL"/>
+                        android:text="@string/button_scientific_rcl"/>
                     
                 </LinearLayout>
 
@@ -213,7 +229,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="sqrt"/>
+                        android:text="@string/button_scientific_sqrt"/>
 
                     <Button
                         android:id="@+id/scientific_button_dot"
@@ -221,7 +237,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="*"/>
+                        android:text="@string/button_scientific_dot"/>
 
                     <Button
                         android:id="@+id/scientific_button_eng"
@@ -229,7 +245,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="ENG"/>
+                        android:text="@string/button_scientific_eng"/>
 
                 </LinearLayout>
 
@@ -246,7 +262,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="x^2"/>
+                        android:text="@string/button_scientific_square"/>
 
                     <Button
                         android:id="@+id/scientific_button_hyp"
@@ -254,7 +270,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="hyp"/>
+                        android:text="@string/button_scientific_hyp"/>
 
                     <Button
                         android:id="@+id/scientific_button_Lbracket"
@@ -262,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="("/>
+                        android:text="@string/button_scientific_Lbracket"/>
 
                 </LinearLayout>
 
@@ -279,7 +295,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="^"/>
+                        android:text="@string/button_scientific_power"/>
 
                     <Button
                         android:id="@+id/scientific_button_sin"
@@ -287,7 +303,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="sin"/>
+                        android:text="@string/button_scientific_sin"/>
 
                     <Button
                         android:id="@+id/scientific_button_Rbracket"
@@ -295,7 +311,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text=")"/>
+                        android:text="@string/button_scientific_Rbracket"/>
 
                 </LinearLayout>
 
@@ -312,7 +328,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="log"/>
+                        android:text="@string/button_scientific_log"/>
 
                     <Button
                         android:id="@+id/scientific_button_cos"
@@ -320,7 +336,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="cos"/>
+                        android:text="@string/button_scientific_cos"/>
 
                     <Button
                         android:id="@+id/scientific_button_comma"
@@ -328,7 +344,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text=","/>
+                        android:text="@string/button_scientific_comma"/>
 
                 </LinearLayout>
 
@@ -345,7 +361,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="ln"/>
+                        android:text="@string/button_scientific_ln"/>
 
                     <Button
                         android:id="@+id/scientific_button_tan"
@@ -353,7 +369,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="tan"/>
+                        android:text="@string/button_scientific_tan"/>
 
                     <Button
                         android:id="@+id/scientific_button_memp"
@@ -361,7 +377,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.333333333"
-                        android:text="M+"/>
+                        android:text="@string/button_scientific_memp"/>
 
                 </LinearLayout>
 
@@ -383,36 +399,36 @@
                     android:orientation="vertical">
                     
                     <Button
-                        android:id="@+id/scientific_button_7"
+                        android:id="@+id/simple_button_7"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" 
                         android:layout_weight="0.25"
-                        android:text="7"/>
+                        android:text="@string/button_simple_7"/>
 
                     <Button
-                        android:id="@+id/scientific_button_4"
+                        android:id="@+id/simple_button_4"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="4"/>
+                        android:text="@string/button_simple_4"/>
 
                     <Button
-                        android:id="@+id/scientific_button_1"
+                        android:id="@+id/simple_button_1"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="1"/>
+                        android:text="@string/button_simple_1"/>
 
                     <Button
-                        android:id="@+id/scientific_button_0"
+                        android:id="@+id/simple_button_0"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="0"/>
+                        android:text="@string/button_simple_0"/>
                     
                 </LinearLayout>
 
@@ -424,36 +440,36 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/scientific_button_8"
+                        android:id="@+id/simple_button_8"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="8"/>
+                        android:text="@string/button_simple_8"/>
 
                     <Button
-                        android:id="@+id/scientific_button_5"
+                        android:id="@+id/simple_button_5"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="5"/>
+                        android:text="@string/button_simple_5"/>
 
                     <Button
-                        android:id="@+id/scientific_button_2"
+                        android:id="@+id/simple_button_2"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="2"/>
+                        android:text="@string/button_simple_2"/>
 
                     <Button
-                        android:id="@+id/scientific_button_decimal"
+                        android:id="@+id/simple_button_decimal"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="."/>
+                        android:text="@string/button_simple_decimal"/>
 
                 </LinearLayout>
 
@@ -465,28 +481,28 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/scientific_button_9"
+                        android:id="@+id/simple_button_9"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="9"/>
+                        android:text="@string/button_simple_9"/>
 
                     <Button
-                        android:id="@+id/scientific_button_6"
+                        android:id="@+id/simple_button_6"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="6"/>
+                        android:text="@string/button_simple_6"/>
 
                     <Button
-                        android:id="@+id/scientific_button_3"
+                        android:id="@+id/simple_button_3"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="3"/>
+                        android:text="@string/button_simple_3"/>
 
                     <Button
                         android:id="@+id/scientific_button_exp"
@@ -494,7 +510,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="EXP"/>
+                        android:text="@string/button_scientific_exp"/>
 
                 </LinearLayout>
 
@@ -516,25 +532,25 @@
                             style="@android:style/Widget.Holo.Button.Borderless"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="DEL" />
+                            android:text="@string/button_scientific_del" />
 
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/scientific_button_multiply"
+                        android:id="@+id/simple_button_multiply"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="x"/>
+                        android:text="@string/button_simple_multiply"/>
 
                     <Button
-                        android:id="@+id/scientific_button_add"
+                        android:id="@+id/simple_button_add"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="+"/>
+                        android:text="@string/button_simple_add"/>
 
                     <Button
                         android:id="@+id/scientific_button_ans"
@@ -542,7 +558,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="ANS"/>
+                        android:text="@string/button_scientific_ans"/>
 
                 </LinearLayout>
 
@@ -564,33 +580,33 @@
                             style="@android:style/Widget.Holo.Button.Borderless"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="AC" />
+                            android:text="@string/button_scientific_ac" />
 
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/scientific_button_divide"
+                        android:id="@+id/simple_button_divide"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="/"/>
+                        android:text="@string/button_simple_divide"/>
 
                     <Button
-                        android:id="@+id/scientific_button_subtract"
+                        android:id="@+id/simple_button_subtract"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="-"/>
+                        android:text="@string/button_simple_subtract"/>
 
                     <Button
-                        android:id="@+id/scientific_button_equals"
+                        android:id="@+id/simple_button_equals"
                         style="@android:style/Widget.Holo.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"
-                        android:text="="/>
+                        android:text="@string/button_simple_equals"/>
 
                 </LinearLayout>
 

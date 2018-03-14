@@ -11,35 +11,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1.0"
-        android:orientation="vertical"
-        android:background="@color/LayoutIdentifier">
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.05"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+
+            <Button
+                android:id="@+id/button_type_simple"
+                style="@android:style/Widget.Holo.Button.Borderless.Small"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.333333"
+                android:textColor="@color/colorTextSelected"
+                android:text="@string/title_simple" />
+
+            <Button
+                android:id="@+id/button_type_scientific"
+                style="@android:style/Widget.Holo.Button.Borderless.Small"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.333333"
+                android:textColor="@color/colorTextLight"
+                android:text="@string/title_scientific" />
+
+            <Button
+                android:id="@+id/button_type_graphing"
+                style="@android:style/Widget.Holo.Button.Borderless.Small"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.333333"
+                android:textColor="@color/colorTextLight"
+                android:text="@string/title_graphing" />
+
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/layout_button_zone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.94">
+            android:layout_weight="0.87">
 
         </FrameLayout>
 
-        <LinearLayout
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
             android:layout_width="match_parent"
-            android:layout_height="14dp"
-            android:layout_weight="0.06">
-
-            <android.support.design.widget.BottomNavigationView
-                android:id="@+id/navigation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="0dp"
-                android:layout_marginStart="0dp"
-                android:background="?android:attr/windowBackground"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:menu="@menu/navigation" />
-
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+            android:background="@color/colorAccent"
+            app:menu="@menu/navigation" />
 
     </LinearLayout>
 
