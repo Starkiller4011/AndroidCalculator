@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private int StateIds[] = new int[3];
     private View LayoutContent;
     private ViewGroup LayoutRoot;
-
+/*
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize member variables
         StateIds[0] = R.layout.simple_calc;
-        StateIds[0] = R.layout.scientific_calc;
-        StateIds[0] = R.layout.graphing_calc;
+        StateIds[1] = R.layout.scientific_calc;
+        StateIds[2] = R.layout.graphing_calc;
         TypeStates[0] = findViewById(R.id.button_type_simple);
         TypeStates[1] = findViewById(R.id.button_type_scientific);
         TypeStates[2] = findViewById(R.id.button_type_graphing);
         LayoutRoot = findViewById(R.id.layout_button_zone);
-        ViewGroup LayoutRoot = findViewById(R.id.layout_button_zone);
 
         // Set initial state to simple calculator
         ChangeTypeState(0);
@@ -66,17 +65,17 @@ public class MainActivity extends AppCompatActivity {
                 ChangeTypeState(1);
             }
         });
-        TypeStates[0].setOnClickListener(new View.OnClickListener() {
+        TypeStates[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChangeTypeState(1);
+                ChangeTypeState(2);
             }
         });
 
         // This is the old BottomNavigationView code
         // TODO - Remove the BottomNavigationView
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //BottomNavigationView navigation = findViewById(R.id.navigation);
+        //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     private void ChangeTypeState(int State) {
