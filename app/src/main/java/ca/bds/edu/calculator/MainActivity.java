@@ -1,65 +1,59 @@
 package ca.bds.edu.calculator;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-    private View ButtonZone;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-            ViewGroup ButtonZoneContainer = findViewById(R.id.layout_button_zone);
-
-            switch (item.getItemId()) {
-                case R.id.navigation_simple:
-                    mTextMessage.setText(R.string.title_simple);
-                    ChangeTargetLayout(ButtonZoneContainer, ButtonZone, R.layout.simple_calc);
-                    return true;
-                case R.id.navigation_scientific:
-                    mTextMessage.setText(R.string.title_scientific);
-                    ChangeTargetLayout(ButtonZoneContainer, ButtonZone, R.layout.scientific_calc);
-                    return true;
-                case R.id.navigation_graphing:
-                    mTextMessage.setText(R.string.title_graphing);
-                    ChangeTargetLayout(ButtonZoneContainer, ButtonZone, R.layout.graphing_calc);
-                    return true;
-            }
-            return false;
-        }
-    };
+    private Button TypeStates[];// = new Button[3];
+    private int StateIds[];// = new int[3];
+    private View LayoutContent;
+    private ViewGroup LayoutRoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewGroup ButtonZoneContainer = findViewById(R.id.layout_button_zone);
+        // Initialize member variables
+        TypeStates = new Button[]{findViewById(R.id.button_type_simple), findViewById(R.id.button_type_scientific), findViewById(R.id.button_type_graphing)};
+        StateIds = new int[]{R.layout.simple_calc, R.layout.scientific_calc, R.layout.graphing_calc};
+        LayoutRoot = findViewById(R.id.layout_button_zone);
 
-        ChangeTargetLayout(ButtonZoneContainer, ButtonZone, R.layout.simple_calc);
+        // Set initial state to simple calculator
+        ChangeTypeState(0);
 
-        mTextMessage = findViewById(R.id.message);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
-
-    private void ChangeTargetLayout(ViewGroup TargetViewSpace, View TargetView, int TargetId) {
-        if (TargetView != null) {
-            TargetViewSpace.removeView(TargetView);
+        // Top nav bar button listeners
+        for (int i = 0; i < 3; i++) {
+            final int test = i;
+            TypeStates[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ChangeTypeState(test);
+                }
+            });
         }
-        TargetView = getLayoutInflater().inflate(TargetId, null);
-        TargetViewSpace.addView(TargetView);
     }
 
+    private void ChangeTypeState(int State) {
+        // Reset layout content
+        if (LayoutContent != null) {
+            LayoutRoot.removeView(LayoutContent);
+        }
+        // Get new layout content
+        LayoutContent = getLayoutInflater().inflate(StateIds[State], null);
+        // Set new layout content
+        LayoutRoot.addView(LayoutContent);
+        // Change selected nav-bar entry
+        for (int i = 0; i < 3; i++) {
+            if (i == State) {
+                TypeStates[i].setTextColor(getResources().getColor(R.color.colorAccentLight));
+            } else {
+                TypeStates[i].setTextColor(getResources().getColor(R.color.colorAccentDark));
+            }
+        }
+    }
 }

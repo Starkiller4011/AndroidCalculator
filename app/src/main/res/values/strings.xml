@@ -6,4 +6,53 @@
     <string name="title_simple">Simple</string>
     <string name="title_scientific">Scientific</string>
     <string name="title_graphing">Graphing</string>
+    <!-- Simple buttons -->
+    <string name="button_simple_0" translatable="false">0</string>
+    <string name="button_simple_1" translatable="false">1</string>
+    <string name="button_simple_2" translatable="false">2</string>
+    <string name="button_simple_3" translatable="false">3</string>
+    <string name="button_simple_4" translatable="false">4</string>
+    <string name="button_simple_5" translatable="false">5</string>
+    <string name="button_simple_6" translatable="false">6</string>
+    <string name="button_simple_7" translatable="false">7</string>
+    <string name="button_simple_8" translatable="false">8</string>
+    <string name="button_simple_9" translatable="false">9</string>
+    <string name="button_simple_decimal" translatable="false">.</string>
+    <string name="button_simple_del" translatable="false">DEL</string>
+    <string name="button_simple_equals" translatable="false">=</string>
+    <string name="button_simple_add" translatable="false">+</string>
+    <string name="button_simple_subtract" translatable="false">-</string>
+    <string name="button_simple_multiply" translatable="false">x</string>
+    <string name="button_simple_divide" translatable="false">/</string>
+    <!-- Scientific buttons -->
+    <string name="button_scientific_ac" translatable="false">AC</string>
+    <string name="button_scientific_del" translatable="false">DEL</string>
+    <string name="button_scientific_exp" translatable="false">EXP</string>
+    <string name="button_scientific_ans" translatable="false">ANS</string>
+    <string name="button_scientific_rcl" translatable="false">RCL</string>
+    <string name="button_scientific_eng" translatable="false">ENG</string>
+    <string name="button_scientific_Lbracket" translatable="false">(</string>
+    <string name="button_scientific_Rbracket" translatable="false">)</string>
+    <string name="button_scientific_comma" translatable="false">,</string>
+    <string name="button_scientific_memp" translatable="false">M+</string>
+    <string name="button_scientific_neg" translatable="false">( - )</string>
+    <string name="button_scientific_dot" translatable="false">*</string>
+    <string name="button_scientific_hyp" translatable="false">hyp</string>
+    <string name="button_scientific_sin" translatable="false">sin</string>
+    <string name="button_scientific_cos" translatable="false">cos</string>
+    <string name="button_scientific_tan" translatable="false">tan</string>
+    <string name="button_scientific_abc" translatable="false">ab/c</string>
+    <string name="button_scientific_sqrt" translatable="false">sqrt</string>
+    <string name="button_scientific_square" translatable="false">x^2</string>
+    <string name="button_scientific_power" translatable="false">^</string>
+    <string name="button_scientific_log" translatable="false">log</string>
+    <string name="button_scientific_ln" translatable="false">ln</string>
+    <string name="button_scientific_inverse" translatable="false">x^-1</string>
+    <string name="button_scientific_ncr" translatable="false">nCr</string>
+    <string name="button_scientific_pol" translatable="false">Pol(</string>
+    <string name="button_scientific_cube" translatable="false">x^3</string>
+    <string name="button_scientific_shift" translatable="false">SHIFT</string>
+    <string name="button_scientific_alpha" translatable="false">ALPHA</string>
+    <string name="button_scientific_mode" translatable="false">MODE</string>
+    <string name="button_scientific_clr" translatable="false">CLR</string>
 </resources>
