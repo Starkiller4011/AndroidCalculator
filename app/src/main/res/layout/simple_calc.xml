@@ -10,15 +10,46 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.3"
-            android:background="@color/colorAccentMid">
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:background="@color/colorAccent">
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/text_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="end|bottom"
+                android:maxLength="20"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="60sp"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/text_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="end|top"
+                android:maxLength="20"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="6912"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp"
+                android:typeface="serif" />
+
+        </LinearLayout>
 
         <LinearLayout
+            android:baselineAligned="false"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.7"
