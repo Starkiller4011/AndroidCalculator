@@ -41,7 +41,7 @@
                 android:maxLength="20"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
-                android:text="6912"
+                android:text="666"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
                 android:typeface="serif" />
@@ -189,7 +189,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/simple_button_clear"
+                    android:id="@+id/simple_button_del"
                     style="@android:style/Widget.Holo.Button.Borderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
