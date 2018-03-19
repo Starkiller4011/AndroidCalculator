@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -76,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ChangeLayout() {
+        // Reset expression text
+        expression = "";
         // Reset layout content
         if (LayoutContent != null) {
             LayoutRoot.removeView(LayoutContent);
@@ -87,13 +88,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void InitiateButtons() {
+        if (SimpleButtons != null) {
+            ResetSimpleButtons();
+        }
         switch (CurrentState) {
             case 0:
                 InitiateSimpleButtons();
+                findViewById(R.id.simple_button_del).setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        ClearText();
+                        return false;
+                    }
+                });
                 EntryZone = findViewById(R.id.text_entry);
                 break;
             case 1:
-                //InitiateSimpleButtons();
+                InitiateSimpleButtons();
                 EntryZone = findViewById(R.id.text_entry);
                 break;
             case 2:
@@ -111,6 +122,19 @@ public class MainActivity extends AppCompatActivity {
         EntryZone.setText(expression);
     }
 
+    private void DeleteLast() {
+        if (expression.length() > 0) {
+            expression = expression.substring(0, expression.length() - 1);
+        }
+        EntryZone.setText(expression);
+    }
+
+    private void ResetSimpleButtons() {
+        for (int index = 0; index < SimpleButtons.length; index++) {
+            SimpleButtons[index].setClickable(false);
+        }
+    }
+
     private void InitiateSimpleButtons() {
         SimpleButtons = new Button[]{findViewById(R.id.simple_button_0), findViewById(R.id.simple_button_1),
                 findViewById(R.id.simple_button_2), findViewById(R.id.simple_button_3),
@@ -120,51 +144,24 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.simple_button_decimal), findViewById(R.id.simple_button_add),
                 findViewById(R.id.simple_button_subtract), findViewById(R.id.simple_button_multiply),
                 findViewById(R.id.simple_button_divide), findViewById(R.id.simple_button_equals),
-                findViewById(R.id.simple_button_clear)};
-        SimpleButtonStrings = new String[]{getResources().getString(R.string.button_simple_0), getResources().getString(R.string.button_simple_1),
-                getResources().getString(R.string.button_simple_2), getResources().getString(R.string.button_simple_3),
-                getResources().getString(R.string.button_simple_4), getResources().getString(R.string.button_simple_5),
-                getResources().getString(R.string.button_simple_6), getResources().getString(R.string.button_simple_7),
-                getResources().getString(R.string.button_simple_8), getResources().getString(R.string.button_simple_9),
-                getResources().getString(R.string.button_simple_decimal), getResources().getString(R.string.button_simple_add),
-                getResources().getString(R.string.button_simple_subtract), getResources().getString(R.string.button_simple_multiply),
-                getResources().getString(R.string.button_simple_divide), getResources().getString(R.string.button_simple_equals),
-                getResources().getString(R.string.button_simple_del)};
+                findViewById(R.id.simple_button_del)};
+        SimpleButtonStrings = new String[]{getResources().getString(R.string.button_simple_0), getResources().getString(R.string.button_simple_1), getResources().getString(R.string.button_simple_2), getResources().getString(R.string.button_simple_3), getResources().getString(R.string.button_simple_4), getResources().getString(R.string.button_simple_5), getResources().getString(R.string.button_simple_6), getResources().getString(R.string.button_simple_7), getResources().getString(R.string.button_simple_8), getResources().getString(R.string.button_simple_9), getResources().getString(R.string.button_simple_decimal), getResources().getString(R.string.button_simple_add), getResources().getString(R.string.button_simple_subtract), getResources().getString(R.string.button_simple_multiply), getResources().getString(R.string.button_simple_divide), getResources().getString(R.string.button_simple_equals), getResources().getString(R.string.button_simple_del)};
         for (int index = 0; index < SimpleButtons.length; index++) {
             final int ButtonIndex = index;
-            if (!SimpleButtons[index].hasOnClickListeners()) {
-                if (index < SimpleButtons.length - 1) {
-                    SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            EditText(SimpleButtonStrings[ButtonIndex]);
-                        }
-                    });
-                } else {
-                    SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            ClearText();
-                        }
-                    });
-                }
+            if (index < SimpleButtons.length - 2) {
+                SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        EditText(SimpleButtonStrings[ButtonIndex]);
+                    }
+                });
             } else {
-                SimpleButtons[index].setOnClickListener(null);
-                if (index < SimpleButtons.length - 1) {
-                    SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            EditText(SimpleButtonStrings[ButtonIndex]);
-                        }
-                    });
-                } else {
-                    SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            ClearText();
-                        }
-                    });
-                }
+                SimpleButtons[index].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DeleteLast();
+                    }
+                });
             }
         }
     }

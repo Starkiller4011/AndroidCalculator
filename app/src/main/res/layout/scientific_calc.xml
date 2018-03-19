@@ -27,7 +27,7 @@
                 android:maxLength="20"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
-                android:text="1234+5678"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="60sp"
                 android:typeface="serif" />
@@ -41,7 +41,7 @@
                 android:maxLength="20"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
-                android:text="6912"
+                android:text="666"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
                 android:typeface="serif" />
@@ -531,11 +531,11 @@
                         android:background="@color/colorDelete">
 
                         <Button
-                            android:id="@+id/scientific_button_del"
+                            android:id="@+id/simple_button_del"
                             style="@android:style/Widget.Holo.Button.Borderless"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/button_scientific_del" />
+                            android:text="@string/button_simple_del" />
 
                     </LinearLayout>
 
