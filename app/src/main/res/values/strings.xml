@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_simple">Simple</string>
     <string name="title_scientific">Scientific</string>
     <string name="title_graphing">Graphing</string>

@@ -19,7 +19,7 @@
             android:layout_weight="0.06"
             android:weightSum="1"
             android:orientation="horizontal"
-            android:background="@color/colorAccentMid">
+            android:background="@color/colorAccent">
 
             <Button
                 android:id="@+id/button_type_simple"
