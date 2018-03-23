@@ -19,7 +19,7 @@
     <string name="button_simple_equals" translatable="false">=</string>
     <string name="button_simple_add" translatable="false">+</string>
     <string name="button_simple_subtract" translatable="false">-</string>
-    <string name="button_simple_multiply" translatable="false">x</string>
+    <string name="button_simple_multiply" translatable="false">*</string>
     <string name="button_simple_divide" translatable="false">/</string>
     <!-- Scientific buttons -->
     <string name="button_scientific_ac" translatable="false">AC</string>

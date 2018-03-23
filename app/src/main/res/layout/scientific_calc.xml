@@ -41,7 +41,7 @@
                 android:maxLength="20"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
-                android:text="666"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
                 android:typeface="serif" />
