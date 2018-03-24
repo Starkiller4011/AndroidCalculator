@@ -1,7 +1,6 @@
 package ca.bds.edu.calculator;
 
 import android.util.Log;
-
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,11 +13,57 @@ public class Expression
         public int precedence;
         public boolean isLeftAssociated;
         public String character;
-        public Operator(int prec, boolean assoc, String operatorCharacter)
+        public Operator(int precedenceValue, boolean assoc, String operatorCharacter)
         {
-            precedence = prec;
+            precedence = precedenceValue;
             isLeftAssociated = assoc;
             character = operatorCharacter;
+        }
+    }
+
+    private class stackToken
+    {
+        public boolean isOperator;
+        public Operator operator;
+        public int number;
+        public String numberString;
+
+        public stackToken(boolean state)
+        {
+            isOperator = state;
+            if (!isOperator)
+            {
+                number = 0;
+            }
+        }
+
+        public stackToken(Operator o)
+        {
+            operator = o;
+            isOperator = true;
+        }
+
+        public stackToken(String digits)
+        {
+            isOperator = false;
+            number = Integer.parseInt(digits);
+        }
+
+        public void expandNumber(String digit)
+        {
+            if (number == 0)
+            {
+                numberString = "";
+            } else
+            {
+                numberString = String.valueOf(number);
+            }
+            Log.d("Number: ", numberString);
+            Log.d("Adding: ", digit);
+            numberString += digit;
+            Log.d("Result: ", numberString);
+            number = Integer.parseInt(numberString);
+            numberString = "";
         }
     }
 
@@ -26,7 +71,7 @@ public class Expression
     private String result;
     private Map<String, Operator> Operators;
     private ArrayDeque<Operator> operatorStack;
-    private ArrayDeque<String> outputQueue;
+    private ArrayDeque<stackToken> outputQueue;
 
     public Expression()
     {
@@ -63,10 +108,7 @@ public class Expression
         }
     }
 
-    public String getResult()
-    {
-        return result;
-    }
+    public String getResult() { return result; }
     
     public void Evaluate()
     {
@@ -74,15 +116,35 @@ public class Expression
         {
             if (isOperator(token))
             {
-                outputQueue.addFirst(" ");
+                if (!outputQueue.isEmpty())
+                {
+                    stackToken number = new stackToken(false);
+                    stackToken first = outputQueue.pop();
+                    if (!first.isOperator && !outputQueue.isEmpty())
+                    {
+                        stackToken tmp = outputQueue.pop();
+                        if (outputQueue.isEmpty())
+                        {
+                            first.expandNumber(String.valueOf(tmp.number));
+                        }
+                        while ((!outputQueue.isEmpty()) && (!tmp.isOperator))
+                        {
+                            first.expandNumber(String.valueOf(tmp.number));
+                            tmp = outputQueue.pop();
+                        }
+                    }
+                    number.expandNumber(new StringBuilder(String.valueOf(first.number)).reverse().toString());
+                    outputQueue.addFirst(number);
+                }
                 if (!operatorStack.isEmpty())
                 {
                     for (Operator entry: operatorStack)
                     {
                         if ((entry.precedence > getOperator(token).precedence) || ((entry.precedence == getOperator(token).precedence) && (entry.isLeftAssociated)))
                         {
-                            String removed = operatorStack.pop().character;
-                            outputQueue.addFirst(removed);
+                            Operator operator = operatorStack.pop();
+                            String removed = operator.character;
+                            outputQueue.addFirst(new stackToken(operator));
                             Log.d("Moved: ", removed + " from operator stack to output queue");
                         } else
                         {
@@ -93,19 +155,28 @@ public class Expression
                 operatorStack.push(getOperator(token));
             } else
             {
-                outputQueue.addFirst(String.valueOf(token));
+                outputQueue.addFirst(new stackToken(String.valueOf(token)));
             }
         }
         while (!operatorStack.isEmpty())
         {
-            String removed = operatorStack.removeLast().character;
-            outputQueue.addFirst(removed);
+            Operator operator = operatorStack.removeLast();
+            String removed = operator.character;
+            outputQueue.addFirst(new stackToken(operator));
             Log.d("Moved: ", removed + " from operator stack to output queue");
         }
         result = "";
         while (!outputQueue.isEmpty())
         {
-            result += outputQueue.removeLast();
+            result += "_";
+            stackToken nextToken = outputQueue.pop();
+            if (nextToken.isOperator)
+            {
+                result += nextToken.operator.character;
+            } else
+            {
+                result += String.valueOf(nextToken.number);
+            }
         }
     }
 
